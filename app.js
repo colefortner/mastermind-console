@@ -5,9 +5,11 @@ const solution = ['red', 'white', 'blue', 'yellow', 'green'];
 console.log(solution);
 
 let gameOver = false;
+let turns = 0;
 
 while(!gameOver ){
 
+    turns += 1;
     let right = 0;
     let close = 0;
     let wrong = 0;
@@ -39,6 +41,12 @@ while(!gameOver ){
     if(right === 5){
         gameOver = true;
         console.log('You Win!')
+    }
+
+    let keepPlaying = input.question('Do you want to keep playing Y/N? ');
+    if(keepPlaying === 'N'){
+        console.log('Game Ended By User');
+        return
     }
 }
 
